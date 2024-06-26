@@ -1,0 +1,40 @@
+/* src/styles/Home.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    padding: 50px;
+}
+h1 {
+    color: #333;
+}
+p {
+    color: #666;
+}
+a {
+    color: #ff4040;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+button {
+    background-color: #ff4040;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+button:hover {
+    background-color: #ff1f1f;
+}

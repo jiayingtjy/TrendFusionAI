@@ -1,7 +1,7 @@
+// src/components/Sidebar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaVideo, FaComments, FaChartLine, FaRegSmile } from 'react-icons/fa';
-import '../styles/Sidebar.css';
+import { FaHome, FaVideo, FaComments, FaChartLine, FaRegSmile, FaUser, FaProjectDiagram } from 'react-icons/fa';
 
 function Sidebar() {
   return (
@@ -10,7 +10,7 @@ function Sidebar() {
       <nav>
         <ul>
           <li>
-            <Link to="/">
+            <Link to="/home">
               <FaHome className="icon" /> Home
             </Link>
           </li>
@@ -32,6 +32,16 @@ function Sidebar() {
           <li>
             <Link to="/feedback">
               <FaRegSmile className="icon" /> Feedback
+            </Link>
+          </li>
+          <li>
+            <Link to="/user-profile">
+              <FaUser className="icon" /> User Profile
+            </Link>
+          </li>
+          <li>
+            <Link to="/trend-fusion-ai">
+              <FaProjectDiagram className="icon" /> Trend Fusion AI
             </Link>
           </li>
         </ul>

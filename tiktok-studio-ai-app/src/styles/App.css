@@ -1,7 +1,6 @@
+/* src/styles/App.css */
 .app {
   display: flex;
-  height: 100vh;
-  background-color: #fafafa;
 }
 
 .sidebar {
@@ -10,22 +9,18 @@
   padding: 20px;
 }
 
-.main-content {
+.content-container {
+  display: flex;
   flex: 1;
   padding: 20px;
 }
 
-.user-profile {
-  width: 250px;
-  background-color: #f8f8f8;
-  padding: 20px;
+.main-content {
+  flex: 2;
 }
 
-.upload-button {
-  background-color: #ff4040;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
+.user-profile {
+  flex: 1;
+  background-color: #f8f8f8;
+  padding: 20px;
 }

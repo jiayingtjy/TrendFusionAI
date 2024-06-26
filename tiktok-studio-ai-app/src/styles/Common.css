@@ -1,0 +1,152 @@
+/* src/styles/Common.css */
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  padding: 50px;
+}
+
+/* Top Nav Styles */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 60px; /* Ensure this height accommodates the user profile picture */
+}
+
+.top-nav .left-nav, .top-nav .right-nav {
+  display: flex;
+  align-items: center;
+  padding-top:10px;
+}
+
+.top-nav .logo {
+  height: 40px;
+  width:1000px;
+  padding-top: 10px;
+}
+
+.top-nav .user-profile-pic {
+  height: 40px;
+  width:40px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  margin-right: 50px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 200px;
+  background-color: #f8f8f8;
+  padding: 20px;
+
+  margin-top: 20px; /* Adjust based on the height of the top nav */
+}
+
+.upload-button {
+  background-color: #ff4040;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.upload-button:hover {
+  background-color: #ff1f1f;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar nav ul li a .icon {
+  margin-right: 10px;
+}
+
+/* Main Layout Styles */
+.main-layout {
+  display: flex;
+  margin-top: 80px; /* Adjust based on the height of the top nav */
+}
+
+/* Main Content Styles */
+.content-container {
+  flex: 1;
+  padding-top:20px;
+  padding: 20px;
+}
+
+.main-content, .comments, .feedback, .analytics, .user-profile, .trend-fusion-ai {
+  flex: 1;
+  padding-top:20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Home Page Styles */
+.logo {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #ff4040;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #ff1f1f;
+}
+
+a {
+  color: #ff4040;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
