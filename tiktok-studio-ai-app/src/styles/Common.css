@@ -1,6 +1,21 @@
 /* src/styles/Common.css */
 
 /* General Styles */
+.oauth-callback {
+  padding: 40px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.oauth-callback h1 {
+  margin-bottom: 20px;
+}
+
+.oauth-callback p {
+  margin-top: 20px;
+  color: #666;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;

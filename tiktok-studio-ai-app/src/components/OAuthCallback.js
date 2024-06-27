@@ -1,7 +1,7 @@
 // src/components/OAuthCallback.js
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import '../styles/Common.css'; // Import the CSS file
 const OAuthCallback = () => {
   const navigate = useNavigate();
 
@@ -43,7 +43,7 @@ const OAuthCallback = () => {
   }, [navigate]);
 
   return (
-    <div>
+    <div className = "oauth-callback">
       <h1>OAuth Callback</h1>
       <p>Processing authentication...</p>
     </div>

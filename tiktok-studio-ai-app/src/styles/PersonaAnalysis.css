@@ -1,0 +1,16 @@
+.persona-analysis {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .persona-analysis h3 {
+    margin-bottom: 10px;
+  }
+  
+  .persona-analysis p {
+    color: #666;
+  }
+  

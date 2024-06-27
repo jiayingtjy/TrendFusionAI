@@ -1,4 +1,46 @@
 const express = require('express');
+const axios = require('axios');
+const cors = require('cors');
+const app = express();
+const port = process.env.PORT || 3001;
+
+app.use(cors()); // Add this line to handle CORS
+app.use(express.json());
+
+app.post('/api/openai', async (req, res) => {
+  const { prompt } = req.body;
+
+  try {
+    const response = await axios.post(
+      'https://api.openai.com/v1/completions',
+      {
+        model: 'text-davinci-003',
+        prompt,
+        max_tokens: 150,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer sk-proj-oJM7Dwds3NsvESlPB0juT3BlbkFJcmo9RNU3nBKWtcz5SyDo`,
+        },
+      }
+    );
+
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error.response ? error.response.data : 'Error communicating with OpenAI API');
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
+
+
+/*
+const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -35,3 +77,4 @@ app.post('/api/tiktok/oauth/token', async (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+*/

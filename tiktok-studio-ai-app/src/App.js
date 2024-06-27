@@ -11,6 +11,8 @@ import LandingPage from './components/LandingPage';
 import Posts from './components/Posts';
 import Comments from './components/Comments';
 import Feedback from './components/Feedback';
+
+import OpenAITest from './components/OpenAITest';
 import './styles/Common.css';
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
               <Route path="/posts" element={<Posts />} />
               <Route path="/comments" element={<Comments />} />
               <Route path="/feedback" element={<Feedback />} />
+              <Route path="/openai-test" element={<OpenAITest />} />
             </Routes>
           </div>
         </div>

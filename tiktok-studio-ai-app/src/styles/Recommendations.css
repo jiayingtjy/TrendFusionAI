@@ -1,0 +1,35 @@
+.recommendations {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .recommendations h2 {
+    margin-bottom: 20px;
+  }
+  
+  .analysis h3 {
+    margin-top: 20px;
+  }
+  
+  .analysis p {
+    margin-bottom: 10px;
+  }
+  
+  .generated-content h3 {
+    margin-top: 20px;
+  }
+  
+  .generated-content p {
+    margin-bottom: 10px;
+  }
+  
+  .video-content h4 {
+    margin-top: 20px;
+  }
+  
+  .video-content div {
+    margin-bottom: 20px;
+  }
+  

@@ -1,0 +1,40 @@
+.recommendation-form {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .recommendation-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .recommendation-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .recommendation-form label {
+    margin-bottom: 10px;
+  }
+  
+  .recommendation-form input {
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .recommendation-form button {
+    padding: 10px;
+    background-color: #ff4040;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .recommendation-form button:hover {
+    background-color: #ff1f1f;
+  }
+  
