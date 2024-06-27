@@ -21,7 +21,7 @@ app.post('/api/openai', async (req, res) => {
       {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer sk-proj-oJM7Dwds3NsvESlPB0juT3BlbkFJcmo9RNU3nBKWtcz5SyDo`,
+          Authorization: process.env.OPENAIKEY,
         },
       }
     );
