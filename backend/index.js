@@ -4,77 +4,58 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors()); // Add this line to handle CORS
+app.use(cors());
 app.use(express.json());
 
-app.post('/api/openai', async (req, res) => {
-  const { prompt } = req.body;
+const CLIENT_KEY = 'aw3sll3ljreab4yv';
+const CLIENT_SECRET = 'n71GM3aCSVwWR6xIPXy4t5U707CgKWh0';
+const REDIRECT_URI = 'http://localhost:3001/oauth/callback';
+
+app.get('/oauth', (req, res) => {
+  const csrfState = Math.random().toString(36).substring(2);
+  res.cookie('csrfState', csrfState, { maxAge: 60000 });
+
+  let url = 'https://www.tiktok.com/v2/auth/authorize/';
+  url += `?client_key=${CLIENT_KEY}`;
+  url += '&scope=user.info.basic';
+  url += '&response_type=code';
+  url += `&redirect_uri=${REDIRECT_URI}`;
+  url += '&state=' + csrfState;
+
+  res.redirect(url);
+});
+
+app.get('/oauth/callback', async (req, res) => {
+  const { code, state } = req.query;
+
+  // Verify the state matches the one sent in /oauth
+  if (req.cookies.csrfState !== state) {
+    return res.status(403).send('State mismatch');
+  }
 
   try {
     const response = await axios.post(
-      'https://api.openai.com/v1/completions',
+      'https://open.tiktokapis.com/v2/oauth/access_token/',
       {
-        model: 'text-davinci-003',
-        prompt,
-        max_tokens: 150,
+        client_key: CLIENT_KEY,
+        client_secret: CLIENT_SECRET,
+        code: code,
+        grant_type: 'authorization_code',
+        redirect_uri: REDIRECT_URI,
       },
       {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: process.env.OPENAIKEY,
-        },
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       }
     );
 
-    res.json(response.data);
+    const accessToken = response.data.access_token;
+    res.json({ accessToken });
   } catch (error) {
-    console.error(error);
-    res.status(500).send(error.response ? error.response.data : 'Error communicating with OpenAI API');
+    console.error('Error fetching access token:', error);
+    res.status(500).send(error.response ? error.response.data : error.message);
   }
 });
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
-
-
-/*
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-
-const app = express();
-app.use(bodyParser.json());
-app.use(cors());
-
-app.post('/api/tiktok/oauth/token', async (req, res) => {
-  const { code } = req.body;
-
-  try {
-    const fetch = (await import('node-fetch')).default;
-
-    const response = await fetch('https://open-api.tiktok.com/oauth/access_token/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        client_key: 'aw3sll3ljreab4yv', // Replace with your TikTok client key
-        client_secret: 'n71GM3aCSVwWR6xIPXy4t5U707CgKWh0', // Replace with your TikTok client secret
-        code,
-        grant_type: 'authorization_code',
-      }),
-    });
-
-    const data = await response.json();
-    res.json(data);
-  } catch (error) {
-    console.error('Error during token exchange:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-*/

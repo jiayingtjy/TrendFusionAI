@@ -165,3 +165,51 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-layout {
+  display: flex;
+  width: 100%;
+}
+
+.content-container {
+  flex: 1;
+  padding: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+.analysis-box {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.analysis-box h2 {
+  margin-bottom: 10px;
+}
+
+.analysis-box p {
+  margin: 5px 0;
+}
+
+#strategic-objective, #recommendation {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}

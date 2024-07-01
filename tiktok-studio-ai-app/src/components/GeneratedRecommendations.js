@@ -4,10 +4,25 @@ import '../styles/GeneratedRecommendations.css';
 function GeneratedRecommendations({ objective, recommendation }) {
   return (
     <div className="generated-recommendations">
-      <h3>Generated Recommendations</h3>
-      <p><strong>Objective:</strong> {objective}</p>
-      <p><strong>Video Idea:</strong> {recommendation.videoIdea}</p>
-      <p><strong>Video Description:</strong> {recommendation.videoDescription}</p>
+      <h2>Generated Recommendations</h2>
+      <div className = "content">
+        <strong>Objective:</strong> {objective}
+      </div>
+      <div className = "content">
+        <strong>Video Idea:</strong> {recommendation.videoIdea}
+      </div>
+      <div className = "content">
+        <strong>Video Description:</strong> {recommendation.videoDescription}
+      </div>
+      <div className = "content">
+        <strong>Props:</strong> {recommendation.props}
+      </div>
+      <div className = "content">
+        <strong>Theme:</strong> {recommendation.theme}
+      </div>
+      <div className = "content">
+        <strong>Script:</strong> {recommendation.script}
+      </div>
       <table>
         <thead>
           <tr>
@@ -17,11 +32,11 @@ function GeneratedRecommendations({ objective, recommendation }) {
           </tr>
         </thead>
         <tbody>
-          {recommendation.videoContent.map((segment, index) => (
+          {recommendation.videoContent.map((content, index) => (
             <tr key={index}>
-              <td>{segment.timeFrame}</td>
-              <td>{segment.script}</td>
-              <td>{segment.action}</td>
+              <td>{content.timeFrame}</td>
+              <td>{content.script}</td>
+              <td>{content.action}</td>
             </tr>
           ))}
         </tbody>

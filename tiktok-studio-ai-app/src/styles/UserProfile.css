@@ -1,56 +1,37 @@
-/* src/styles/UserProfile.css */
-/* src/styles/UserProfile.css */
 .user-profile {
-  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  margin-left: 20px;
-  width: 300px; /* adjust width as needed */
 }
 
-  
-  .user-profile .profile-pic {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-  }
-  
-  .user-profile h3 {
-    margin: 10px 0;
-  }
-  
-  .user-profile p {
-    margin: 5px 0;
-    color: #666;
-  }
-  
-  .recent-posts {
-    margin-top: 20px;
-    text-align: left;
-  }
-  
-  .recent-posts h4 {
-    margin-bottom: 10px;
-  }
-  
-  .recent-posts p {
-    margin: 5px 0;
-    color: #666;
-  }
-  
-  .upload-button {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background-color: #ff4040;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .upload-button:hover {
-    background-color: #ff1f1f;
-  }
-  
+.profile-details {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.generate-analysis-btn {
+  padding: 10px 20px;
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.generate-analysis-btn:hover {
+  background-color: #ff787d;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
